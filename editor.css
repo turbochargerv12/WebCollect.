@@ -1,0 +1,35 @@
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#000000;color:#fff;font:12px "JetBrains Mono",Consolas,"Courier New",monospace}body{padding:24px}.app{max-width:1500px;margin:auto;background:#000000;padding:18px;min-height:calc(100vh - 48px);display:flex;flex-direction:column;gap:13px}.header{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:38px}.identity{display:flex;flex-direction:column}.identity b{font-size:13px}.identity span{color:#ddd;font-size:11px}.export{display:flex;gap:10px}button,select,input{font:inherit}button{cursor:pointer;border:0;border-radius:0}.export button{background:#62be46;color:#050505;padding:12px 16px;min-width:124px}.workspace{display:grid;grid-template-columns:230px minmax(0,1fr);gap:13px;flex:1;min-height:calc(100vh - 125px)}.settings{background:#000000;padding:16px;display:flex;flex-direction:column;gap:18px}.field{display:flex;flex-direction:column;gap:9px;overflow-wrap:anywhere}.field input[type=text],.field select{width:100%;padding:9px;border:1px solid #555;background:#000000;color:#fff;min-width:0}.field input[type=range]{width:100%;accent-color:#62be46}.quiet{background:#62be46;padding:10px;color:#111}.settings-spacer{flex:1}.danger{background:#cd4016;color:white;padding:12px 7px;min-height:40px}#status{color:#ccc;font-size:11px;overflow-wrap:anywhere;line-height:1.5}.preview{position:relative;background:#d9d9d9;min-width:0;padding:22px;overflow:auto;min-height:550px}.empty{position:absolute;inset:0;display:grid;place-items:center;color:#333;pointer-events:none}.empty[hidden]{display:none}#sheet{position:relative;width:210mm;min-height:297mm;margin:0 auto;background:white;color:#111;padding:12mm;box-shadow:0 2px 15px #0002;max-width:none}#sheet.long{width:322.75mm;min-height:500mm}#content{width:100%;font:14px Arial,sans-serif}.block{padding:6px;border:1px dashed #bbb;margin:0 0 12px;overflow-wrap:anywhere}.controls{display:flex;flex-wrap:wrap;gap:7px;align-items:center;background:#e9e9e9;color:#111;padding:7px;margin-bottom:9px;font:11px Arial,sans-serif}.controls label{display:flex;gap:4px;align-items:center}.controls input[type=range]{width:70px;accent-color:#62be46}.controls button{background:#fff;color:#111;border:1px solid #bbb;padding:6px}.body-content{max-width:100%;overflow-wrap:anywhere}.body-content img{max-width:100%;height:auto}.body-content pre{white-space:pre-wrap;overflow-wrap:anywhere}.body-content table{max-width:100%;border-collapse:collapse}.body-content[contenteditable=true]{outline:2px solid #62be46}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #62be46;outline-offset:2px}@media(max-width:720px){body{padding:0}.app{padding:12px;min-height:100vh}.workspace{grid-template-columns:1fr}.settings{gap:12px}.preview{min-height:600px}.export button{min-width:0;padding:10px}.settings-spacer{display:none}}@media print{@page{size:A4;margin:8mm}html,body{background:#fff!important;padding:0!important;margin:0!important}.app,.workspace,.preview{display:block!important;min-height:0!important;background:#fff!important;margin:0!important;padding:0!important;overflow:visible!important}.header,.settings,.controls,.empty{display:none!important}#sheet,#sheet.long{width:auto!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;box-shadow:none!important}.block{border:0!important;padding:0!important;margin:0 0 5px!important;break-inside:auto}.body-content{overflow:visible!important}}
+/* WebCollect UI typography and true-black theme */
+:root{font-family:"JetBrains Mono",Consolas,"Courier New",monospace;color-scheme:dark}
+button,input,select,textarea{font-family:"JetBrains Mono",Consolas,"Courier New",monospace}
+
+.settings{background:#000000;border:1px solid #252525}
+.app,body{background:#000000}
+/* White document and gray preview intentionally retained for readability and PDF output. */
+
+/* The application remains pitch-black; the printed PDF must not inherit the app shell. */
+@media print {
+ :root,html,body{color-scheme:light!important;background:#fff!important;color:#111!important;}
+ body,.app,.workspace,.preview,#sheet,#content{background:#fff!important;background-image:none!important;box-shadow:none!important;filter:none!important;outline:none!important;}
+ .app,.workspace,.preview{border:0!important;gap:0!important;}
+ .preview{width:100%!important;max-width:none!important;}
+ #sheet{color:#111!important;border:0!important;}
+ #content{color:#111!important;}
+ .block{background:transparent!important;box-shadow:none!important;outline:0!important;}
+}
+
+/* Native print engine sees only the white document, never the black editor chrome. */
+@media print {
+ html.pdf-exporting,html.pdf-exporting body,html.pdf-exporting .app,html.pdf-exporting .workspace,html.pdf-exporting .preview{background:#fff!important;}
+ html.pdf-exporting .preview{padding:0!important;}
+}
+
+/* Editable notes are distinct from captured webpage elements. */
+.text-block{border-left:3px solid #62be46}
+.text-block .body-content{min-height:44px;padding:8px 10px;background:#fff;color:#111;cursor:text}
+.text-block .body-content:focus{outline:2px solid #62be46}
+#addText{background:#62be46;color:#050505}
+@media print{.text-block{border:0!important}.text-block .body-content{padding:0!important;min-height:0!important;outline:0!important}}
+
+/* Hide export actions entirely for empty documents. */
+.export button[hidden]{display:none!important}

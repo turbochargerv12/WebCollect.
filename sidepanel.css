@@ -1,0 +1,11 @@
+:root{color-scheme:dark}*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:#000000;color:#fff;font:12px "JetBrains Mono",Consolas,"Courier New",monospace}.panel{margin:12px;background:#000000;min-height:calc(100vh - 24px);padding:14px;display:flex;flex-direction:column;gap:8px}header{display:flex;flex-direction:column;margin-bottom:5px}header b{font-size:13px}header span{font-size:11px;color:#ddd}.topline{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-height:42px}button{border:0;border-radius:0;cursor:pointer;font:11px "JetBrains Mono",Consolas,"Courier New",monospace}button:focus-visible{outline:2px solid #fff;outline-offset:2px}.collect{background:#62be46;color:#080808}.collect.stop{background:#cd4016;color:#fff}.counter{background:#fff;color:#111;display:flex;justify-content:space-between;align-items:center;padding:4px 7px;gap:3px}.counter span{font-size:10px;line-height:1.15}.counter strong{font-size:30px;font-weight:400;line-height:1}.preview-area{background:#fff;color:#111;min-height:180px;flex:1;position:relative;overflow:auto}.empty{position:absolute;inset:0;display:grid;place-items:center;color:#333;font-size:12px}.item-list{padding:10px;display:flex;flex-direction:column;gap:7px}.item{border:1px solid #ddd;padding:9px;background:#fafafa;overflow-wrap:anywhere}.item small{display:block;color:#666;margin-top:4px}.bottomline{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bottomline button{padding:12px 5px;min-height:34px}.preview-btn{background:#fff;color:#111}.clear{background:#cd4016;color:#fff}footer{font-size:11px;text-align:center;padding:5px 0 2px;line-height:1.4;color:#ddd}@media(max-width:260px){.panel{margin:5px;padding:8px}.topline{gap:4px}.counter strong{font-size:24px}}
+/* WebCollect UI typography and true-black theme */
+:root{font-family:"JetBrains Mono",Consolas,"Courier New",monospace;color-scheme:dark}
+button,input,select,textarea{font-family:"JetBrains Mono",Consolas,"Courier New",monospace}
+
+body,.panel{background:#000000}
+
+/* Individual collection controls */
+.item{position:relative;padding-right:72px;min-height:52px}
+.item .remove-item{position:absolute;right:7px;top:50%;transform:translateY(-50%);background:#cd4016;color:#fff;padding:7px 9px;font-size:10px;max-width:64px}
+.item .remove-item:disabled{opacity:.5;cursor:wait}
