@@ -21,3 +21,7 @@ HTML downloads contain sanitized captures, notes and linked images. PDFs contain
 Deleting an item removes it from the local collection. Clearing removes items but retains the saved document title; replace it using the filename field. Uninstalling normally removes extension storage. These actions do not delete exports, backups or shared copies. No timed retention or remote deletion is implemented.
 
 For PDF generation the debugger attaches only to the editor tab and detaches in a finally block if attachment succeeded. It does not record browsing traffic. See SECURITY.md for limitations.
+
+## Limited use
+
+WebCollect uses captured information only to provide its collection, editing and export features. It does not sell user data, use it for advertising, or use it to determine creditworthiness. The developer does not receive collections through the extension. WebCollect’s use of information received from Google APIs adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.

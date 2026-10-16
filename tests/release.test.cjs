@@ -9,7 +9,7 @@ let browser;
 
 after(async()=>{await browser?.close();});
 async function editor(items=[]){
-  browser ||= await chromium.launch({headless:true,channel:process.env.WEBCOLLECT_BROWSER_CHANNEL||undefined});
+  browser ||= await chromium.launch({headless:true,channel:process.env.WEBCOLLECT_BROWSER_CHANNEL||undefined,executablePath:process.env.WEBCOLLECT_BROWSER_EXECUTABLE||undefined});
   const page=await browser.newPage();
   await page.route('https://webcollect.test/**',route=>{
     const file=path.basename(new URL(route.request().url()).pathname);

@@ -7,11 +7,11 @@ Source review: 16 October 2026. This is a scoped review, not a penetration-test 
 | storage | Captures, notes and title in chrome.storage.local. Content scripts need access to append items. |
 | downloads | Saves the generated PDF with a save dialog. HTML uses a Blob download link. |
 | debugger | Attaches to the requesting editor tab for Page.enable and Page.printToPDF; detaches in finally. Powerful permission retained to preserve direct PDF export. |
-| tabs | Active tab messaging and URL-based sidebar navigation handling. Overlaps with broad host grants; retained pending browser compatibility testing. |
+| tabs permission omitted | Active-tab IDs and messaging do not require this permission; HTTP/HTTPS URL visibility is supplied by the existing host grants. |
 | sidePanel | Toolbar sidebar and navigation dismissal. |
 | HTTP/HTTPS hosts | Static collector on regular websites; image resources can also load in preview. Broad access retained to preserve collection on arbitrary sites. |
 
-Replacing broad access with activeTab and scripting requires an injection/lifecycle change and compatibility tests; this release does not make that behavioral change. No externally_connectable or web_accessible_resources declarations, remote scripts, eval, or explicit network clients were found.
+The redundant tabs permission was removed for store preparation. Replacing broad access with activeTab and scripting requires an injection/lifecycle change and compatibility tests; this release does not make that behavioral change. No externally_connectable or web_accessible_resources declarations, remote scripts, eval, or explicit network clients were found.
 
 ## Hardening in this release
 
