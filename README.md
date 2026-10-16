@@ -1,4 +1,25 @@
-# WebCollect
+<div align="center">
+  <br>
+  <img src="./logo.png" alt="WebCollect — white monospace wordmark with a green dot on black" width="360">
+  <br><br>
+  <strong>Collect. Edit. Export.</strong>
+  <p>Pieces of the web. One document.</p>
+  <p>
+    <a href="#install-locally">Get started</a> &nbsp;·&nbsp;
+    <a href="#use">How it works</a> &nbsp;·&nbsp;
+    <a href="./PRIVACY.md">Privacy</a> &nbsp;·&nbsp;
+    <a href="./LICENSE">MIT License</a>
+  </p>
+  <br>
+</div>
+
+---
+
+| Collect | Edit | Export |
+| :--- | :--- | :--- |
+| Pick the parts you need from webpages. | Arrange captures, refine text and add notes. | Save HTML or a PDF with selectable text. |
+
+## Overview
 
 Collect webpage elements, organize and edit them, add notes, and export HTML or PDFs with selectable text. Version 1.0.0 is the first public release version; earlier 6.x numbers were development versions.
 
